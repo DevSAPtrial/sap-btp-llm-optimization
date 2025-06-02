@@ -1,0 +1,35 @@
+name: Deploy to SAP BTP
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '16'
+
+    - name: Install dependencies
+      run: npm install
+
+    - name: Build CAP project
+      run: npx cds build
+
+    - name: Deploy to SAP BTP
+      env:
+        BTP_USERNAME: ${{ secrets.BTP_USERNAME }}
+        BTP_PASSWORD: ${{ secrets.BTP_PASSWORD }}
+        BTP_API_ENDPOINT: ${{ secrets.BTP_API_ENDPOINT }}
+        BTP_SUBACCOUNT: ${{ secrets.BTP_SUBACCOUNT }}
+      run: |
+        npm install -g @sap/cds-dk
+        cds deploy --to hana --service-key $BTP_SUBACCOUNT --apikey $BTP_PASSWORD
