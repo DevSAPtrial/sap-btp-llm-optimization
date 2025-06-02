@@ -1,21 +1,33 @@
-# SAP BTP LLM Optimization - Node.js CAP App
-This project demonstrates integrating OpenAI GPT-4o with SAP BTP AI Core in a CAP application, featuring caching, persistence, and monitoring.
+# SAP BTP LLM Optimization - Node.js CAP Project
+
+This project demonstrates a complete SAP CAP Node.js app integrating GPT-4o via SAP AI Core.
 
 ## Features
-- Connects to GPT-4o via SAP AI Core
-- Implements caching with NodeCache
-- Stores prompt/response in HANA or SQLite
-- Ready for BTP deployment
+- CDS data model for prompt and response
+- CAP service with caching and persistence
+- Simple UI5 frontend to interact with the GPT model
+- Ready to deploy on SAP BTP
 
-## Setup
-1. Clone the repository.
-2. Install dependencies: `npm install`
-3. Create `.env` with your SAP AI Core token.
-4. Start the app: `cds run`
-5. Call the `getGPTResponse` action via REST or CAP UI.
+## Setup Instructions
 
-## Deployment
-Adapt the endpoint and deploy to your SAP BTP subaccount with SAP HANA or SQLite.
+1. Clone the repository
+2. Copy `.env.sample` to `.env` and add your SAP AI Core token
+3. Install dependencies
+   ```bash
+   npm install
+   ```
+4. Run locally
+   ```bash
+   npm start
+   ```
+5. Access the UI at `http://localhost:4004/app/index.html`
 
-## License
-MIT
+## Deployment to SAP BTP
+
+- Use `cds deploy` commands
+- Configure your SAP BTP subaccount and HANA database connection
+- Deploy the app to your SAP BTP subaccount
+
+## Notes
+- Replace the SAP AI Core endpoint and token with actual values from your SAP BTP environment.
+- Adjust the frontend fetch URL according to your service path in deployment.

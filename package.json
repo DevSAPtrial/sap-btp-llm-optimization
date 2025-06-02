@@ -1,7 +1,7 @@
 {
   "name": "sap-btp-llm-optimization",
   "version": "1.0.0",
-  "description": "Node.js CAP App integrating GPT-4o with SAP BTP AI Core",
+  "description": "SAP CAP Node.js app integrating GPT-4o via SAP AI Core",
   "scripts": {
     "start": "cds run",
     "deploy": "cds deploy --to sqlite"
@@ -10,5 +10,8 @@
     "@sap/cds": "^7",
     "axios": "^1.3.0",
     "node-cache": "^5.1.2"
+  },
+  "engines": {
+    "node": ">=16"
   }
 }

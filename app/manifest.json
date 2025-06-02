@@ -1,0 +1,24 @@
+{
+  "_version": "1.12.0",
+  "sap.app": {
+    "id": "sap.btp.llm.ui",
+    "type": "application",
+    "applicationVersion": {
+      "version": "1.0.0"
+    },
+    "title": "SAP BTP LLM Optimization UI",
+    "description": "UI5 app for SAP BTP LLM Optimization example"
+  },
+  "sap.ui5": {
+    "rootView": {
+      "viewName": "sap.btp.llm.ui.view.App",
+      "type": "XML"
+    },
+    "dependencies": {
+      "minUI5Version": "1.71.0",
+      "libs": {
+        "sap.m": {}
+      }
+    }
+  }
+}

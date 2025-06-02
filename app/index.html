@@ -1,1 +1,41 @@
-<!DOCTYPE html><html><head><title>CAP UI</title></head><body><h1>CAP UI Placeholder</h1></body></html>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>SAP BTP LLM Optimization UI</title>
+    <script
+      id="sap-ui-bootstrap"
+      src="https://ui5.sap.com/resources/sap-ui-core.js"
+      data-sap-ui-theme="sap_fiori_3"
+      data-sap-ui-libs="sap.m"
+      data-sap-ui-compatVersion="edge"
+      data-sap-ui-preload="async"
+      data-sap-ui-resourceroots='{"sap.btp.llm.ui": "./"}'
+    ></script>
+    <script src="controller.js"></script>
+  </head>
+  <body class="sapUiBody" id="content">
+    <div
+      id="content"
+      class="sapUiContentPadding"
+      style="max-width: 600px; margin: 40px auto"
+    >
+      <h1>SAP BTP LLM Optimization</h1>
+      <sap.m.Input
+        id="promptInput"
+        placeholder="Enter your prompt here"
+        width="100%"
+      ></sap.m.Input>
+      <sap.m.Button
+        text="Get GPT Response"
+        press="onGetResponse"
+        style="margin-top: 10px; width: 100%"
+      ></sap.m.Button>
+      <sap.m.Text
+        id="responseText"
+        wrapping="true"
+        style="margin-top: 20px; white-space: pre-wrap"
+      ></sap.m.Text>
+    </div>
+  </body>
+</html>
